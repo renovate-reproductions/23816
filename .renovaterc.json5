@@ -1,0 +1,22 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    extends: [
+        "config:recommended",
+        ":approveMajorUpdates",
+        ":rebaseStalePrs",
+        ":semanticPrefixChore",
+        ":separateMultipleMajorReleases",
+        "mergeConfidence:all-badges",
+    ],
+
+    ignorePresets: [
+        ":semanticPrefixFixDepsChoreOthers",
+    ],
+
+    "postUpgradeTasks": {
+        "commands": [
+          "echo '# 2023' > Dockerfile",
+        ],
+    },
+}
